@@ -4,9 +4,9 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd"> 
-    <changeSet author="alfonso_catalan" id="20190225-001">
+    <changeSet author="alfonso_catalan" id="20190228-001">
         <createTable tableName="artista">
-            <column name="id_artista" type="INT">
+            <column name="id_artist" type="INT">
                 <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
             <column name="name" type="VARCHAR(30)">
@@ -21,24 +21,24 @@
         </createTable>
     </changeSet>
     
-    <changeSet author="alfonso_catalan" id="20190225-002">
+    <changeSet author="alfonso_catalan" id="20190228-002">
         <createTable tableName="album">
             <column name="id_album" type="INT">
                 <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
-            <column name="nombre" type="VARCHAR(30)">
+            <column name="name" type="VARCHAR(30)">
                 <constraints nullable="false"/>
             </column>
-            <column name="año" type="INT">
+            <column name="year" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="id_artista" type="INT">
+            <column name="id_artist" type="INT">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
 
-    <changeSet author="alfonso_catalan" id="20190225-003">
+    <changeSet author="alfonso_catalan" id="20190228-003">
         <createTable tableName="genero">
             <column name="id_genero" type="INT">
                 <constraints nullable="false"/>
@@ -49,9 +49,9 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="alfonso_catalan" id="20190225-004">
-        <createTable tableName="cancion">
-            <column name="id_cancion" type="INT">
+    <changeSet author="alfonso_catalan" id="20190228-004">
+        <createTable tableName="songs">
+            <column name="id_song" type="INT">
                 <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
             <column name="title" type="VARCHAR(30)">
@@ -60,10 +60,10 @@
             <column name="album" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="duracion" type="INT">
+            <column name="duration" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="genero" type="INT">
+            <column name="genre" type="INT">
                 <constraints nullable="false"/>
             </column>
             <column name="artista" type="INT">
