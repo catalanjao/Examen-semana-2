@@ -41,7 +41,7 @@
     <changeSet author="alfonso_catalan" id="20190228-003">
         <createTable tableName="genre">
             <column name="id_genre" type="INT">
-                <constraints nullable="false"/>
+                <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
             <column name="description" type="VARCHAR(30)">
                 <constraints nullable="false"/>
@@ -57,22 +57,22 @@
             <column name="title" type="VARCHAR(30)">
                 <constraints nullable="false"/>
             </column>
-            <column name="album" type="INT">
+            <column name="id_album" type="INT">
                 <constraints nullable="false"/>
             </column>
             <column name="duration" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="genre" type="INT">
+            <column name="id_genre" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="artista" type="INT">
+            <column name="id_artist" type="INT">
                 <constraints nullable="false"/>
             </column>
       </createTable>
     </changeSet>
 
-    <changeSet author="alfonso_catalan" id="20190225-005">
+    <changeSet author="alfonso_catalan" id="20190228-005">
         <addForeignKeyConstraint baseColumnNames="id_artist"
             baseTableName="album"
             constraintName="fk_artist_album"
@@ -80,23 +80,21 @@
             referencedTableName="artist"/>
     </changeSet>
 
-    <!--<changeSet author="alfonso_catalan" id="20190225-006">
-        <addForeignKeyConstraint baseColumnNames="id_user"
-            baseTableName="user_permissions"
-            constraintName="fk_user_permissions"
-            referencedColumnNames="id_user"
-            referencedTableName="user"/>
+    <changeSet author="alfonso_catalan" id="20190228-006">
+        <addForeignKeyConstraint baseColumnNames="id_artist"
+            baseTableName="songs"
+            constraintName="fk_song_artist"
+            referencedColumnNames="id_artist"
+            referencedTableName="artist"/>
     </changeSet>
-    <changeSet author="alfonso_catalan" id="20190225-007">
-        <addForeignKeyConstraint baseColumnNames="id_permission"
-            baseTableName="user_permissions"
+    
+    
+    <changeSet author="alfonso_catalan" id="20190228-007">
+        <addForeignKeyConstraint baseColumnNames="id_genre"
+            baseTableName="songs"
             constraintName="fk_permissions_permissions"
-            referencedColumnNames="id_permission"
-            referencedTableName="permissions"/>
+            referencedColumnNames="id_genre"
+            referencedTableName="genre"/>
     </changeSet>
-    <changeSet author="alfonso_catalan" id="20190225-008">
-        <addUniqueConstraint columnNames="id_user, id_permission"
-            constraintName="composite_unique"
-            tableName="user_permissions"/>
-    </changeSet>-->
+    
 </databaseChangeLog> 
