@@ -5,8 +5,8 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd"> 
     <changeSet author="alfonso_catalan" id="20190225-001">
-        <createTable tableName="user">
-            <column name="id_user" type="INT">
+        <createTable tableName="artista">
+            <column name="id_artista" type="INT">
                 <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
             <column name="name" type="VARCHAR(30)">
@@ -17,62 +17,62 @@
             </column>
             <column name="age" type="INT">
                 <constraints nullable="false"/>
-            </column>
-            <column name="user" type="VARCHAR(30)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="password" type="VARCHAR(30)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="id_address" type="INT">
-                <constraints nullable="false"/>
-            </column>
+            </column>        
         </createTable>
     </changeSet>
     
     <changeSet author="alfonso_catalan" id="20190225-002">
-        <createTable tableName="address">
-            <column name="id_address" type="INT">
+        <createTable tableName="album">
+            <column name="id_album" type="INT">
                 <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
-            <column name="street" type="VARCHAR(30)">
+            <column name="nombre" type="VARCHAR(30)">
                 <constraints nullable="false"/>
             </column>
-            <column name="num" type="INT">
+            <column name="año" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="cp" type="INT">
+            <column name="id_artista" type="INT">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
 
     <changeSet author="alfonso_catalan" id="20190225-003">
-        <createTable tableName="user_permissions">
-            <column name="id_user" type="INT">
+        <createTable tableName="genero">
+            <column name="id_genero" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="id_permission" type="INT">
+            <column name="descripcion" type="VARCHAR(30)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
 
     <changeSet author="alfonso_catalan" id="20190225-004">
-        <createTable tableName="permissions">
-            <column name="id_permission" type="INT">
+        <createTable tableName="cancion">
+            <column name="id_cancion" type="INT">
                 <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
-            <column name="name" type="VARCHAR(30)">
+            <column name="title" type="VARCHAR(30)">
                 <constraints nullable="false"/>
             </column>
-            <column name="description" type="VARCHAR(255)">
+            <column name="album" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="duracion" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="genero" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="artista" type="INT">
                 <constraints nullable="false"/>
             </column>
       </createTable>
     </changeSet>
 
-    <changeSet author="alfonso_catalan" id="20190225-005">
+    <!--<changeSet author="alfonso_catalan" id="20190225-005">
         <addForeignKeyConstraint baseColumnNames="id_address"
             baseTableName="user"
             constraintName="fk_address_user"
@@ -97,5 +97,5 @@
         <addUniqueConstraint columnNames="id_user, id_permission"
             constraintName="composite_unique"
             tableName="user_permissions"/>
-    </changeSet>
+    </changeSet>-->
 </databaseChangeLog> 
