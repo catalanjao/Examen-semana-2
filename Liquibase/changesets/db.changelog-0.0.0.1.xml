@@ -5,7 +5,7 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd"> 
     <changeSet author="alfonso_catalan" id="20190228-001">
-        <createTable tableName="artista">
+        <createTable tableName="artist">
             <column name="id_artist" type="INT">
                 <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
@@ -39,11 +39,11 @@
     </changeSet>
 
     <changeSet author="alfonso_catalan" id="20190228-003">
-        <createTable tableName="genero">
-            <column name="id_genero" type="INT">
+        <createTable tableName="genre">
+            <column name="id_genre" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="descripcion" type="VARCHAR(30)">
+            <column name="description" type="VARCHAR(30)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -72,14 +72,15 @@
       </createTable>
     </changeSet>
 
-    <!--<changeSet author="alfonso_catalan" id="20190225-005">
-        <addForeignKeyConstraint baseColumnNames="id_address"
-            baseTableName="user"
-            constraintName="fk_address_user"
-            referencedColumnNames="id_address"
-            referencedTableName="address"/>
+    <changeSet author="alfonso_catalan" id="20190225-005">
+        <addForeignKeyConstraint baseColumnNames="id_artist"
+            baseTableName="album"
+            constraintName="fk_artist_album"
+            referencedColumnNames="id_artist"
+            referencedTableName="artist"/>
     </changeSet>
-    <changeSet author="alfonso_catalan" id="20190225-006">
+
+    <!--<changeSet author="alfonso_catalan" id="20190225-006">
         <addForeignKeyConstraint baseColumnNames="id_user"
             baseTableName="user_permissions"
             constraintName="fk_user_permissions"
