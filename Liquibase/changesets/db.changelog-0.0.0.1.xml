@@ -81,11 +81,11 @@
     </changeSet>
 
     <changeSet author="alfonso_catalan" id="20190228-006">
-        <addForeignKeyConstraint baseColumnNames="id_artist"
+        <addForeignKeyConstraint baseColumnNames="id_album"
             baseTableName="songs"
             constraintName="fk_song_artist"
-            referencedColumnNames="id_artist"
-            referencedTableName="artist"/>
+            referencedColumnNames="id_album"
+            referencedTableName="album"/>
     </changeSet>
     
     
