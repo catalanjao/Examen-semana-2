@@ -83,7 +83,7 @@
     <changeSet author="alfonso_catalan" id="20190228-006">
         <addForeignKeyConstraint baseColumnNames="id_album"
             baseTableName="songs"
-            constraintName="fk_song_artist"
+            constraintName="fk_song_album"
             referencedColumnNames="id_album"
             referencedTableName="album"/>
     </changeSet>
@@ -92,7 +92,7 @@
     <changeSet author="alfonso_catalan" id="20190228-007">
         <addForeignKeyConstraint baseColumnNames="id_genre"
             baseTableName="songs"
-            constraintName="fk_permissions_permissions"
+            constraintName="fk_song_genre"
             referencedColumnNames="id_genre"
             referencedTableName="genre"/>
     </changeSet>
