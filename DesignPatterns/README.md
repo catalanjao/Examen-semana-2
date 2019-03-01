@@ -7,6 +7,9 @@ Patron de diseño elegido para solucionar la problemantica presentada en el exam
 # Solucion
 Patron Mediador
 # Consideraciones
+
+![alt text](https://refactoring.guru/images/patterns/diagrams/mediator/structure.png)
+
 -El objeto mediador concreto puede redirigir  las llamadas (en  éste caso de los componentes de Sistemas de Streaming) al tipo de función que necesite el mismo (Dar de alta una licencia, obtener actulizacion)
 
 -Podemos tener compomentes de sistemas streaming que tengan sus propias funciones y que soliciten información al mediador
